@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+<!--    第一种 下标赋值-->
+<!--    <bean id="user" class="com.zpc.pojo.User">-->
+<!--        <constructor-arg index="0" value="Spring"/>-->
+<!--    </bean>-->
+
+<!--    第二种-->
+<!--        <bean id="user" class="com.zpc.pojo.User">-->
+<!--            <constructor-arg type="java.lang.String" value="Spring"/>-->
+<!--        </bean>        -->
+        <!--直接通过参数名-->
+        <bean id="user" class="com.zpc.pojo.User">
+            <constructor-arg name="name" value="Spring"/>
+        </bean>
+
+<!--        id: bean的唯一标识符-->
+<!--        class：bean对象对应的全限定名：包名+类型-->
+<!--        name：也是别名 用name也可取别名, 可以同时取多个别名-->
+        <bean id="userT" class="com.zpc.pojo.UserT" name="userT2, u2">
+
+        </bean>
+
+        <alias name="user" alias="userNew"/>
+
+</beans>

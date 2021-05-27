@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="mysqlImpl" class="com.zpc.dao.UserDaoMysqlImpl" />
+    <bean id="orcaleImpl" class="com.zpc.dao.UserDaoOrcaleImpl" />
+    <bean id="userlImpl" class="com.zpc.dao.UserDaoImpl" />
+
+    <bean id="UserService" class="com.zpc.service.UserServiceImp">
+<!--        ref ： Spring中引用创建好的对象
+            value: 具体值（基本数据类型）-->
+        <property name="userDao" ref="mysqlImpl" />
+    </bean>
+</beans>
